@@ -1,8 +1,7 @@
 <p align="center">
   <h1 align="center">💊 MediCare Pharmacy Management System</h1>
   <p align="center">
-    <b>A full-featured desktop pharmacy solution — built with love, C#, and a lot of SQL.</b><br/>
-    <i>Manage medicines, orders, prescriptions, and users — all in one place.</i>
+    <img src="https://raw.githubusercontent.com/yourusername/medicare-pharmacy/main/assets/banner.gif" alt="MediCare Animated Banner" width="680"/>
   </p>
   <p align="center">
     <img src="https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge&logo=windows" />
