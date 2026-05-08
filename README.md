@@ -138,56 +138,6 @@
 
 ---
 
-## 🗺️ Entity Relationship Diagram
-
-```
-                        ┌─────────────────────────────────┐
-                        │           MEDICINES              │
-                        │─────────────────────────────────│
-                        │ 🔑 MedicineID (PK)               │
-                        │    Name                          │
-                        │    Category                      │
-                        │    Price                         │
-                        │    Stock                         │
-                        └────────────────┬────────────────┘
-                                         │ 1
-                                    ◇ In cart ◇
-                                         │ N
-┌──────────────────────────┐    ┌────────┴────────┐    ┌──────────────────────────────┐
-│          USERS           │    │      CART        │    │           ORDERS             │
-│──────────────────────────│    │─────────────────│    │──────────────────────────────│
-│ 🔑 UserID (PK)           │    │ 🔑 CartID (PK)  │    │ 🔑 OrderID (PK)              │
-│    FirstName             │1   │    UserID (FK)   │1   │    UserID (FK)               │
-│    LastName              ├────┤◇ Adds to ◇      ├────┤◇  Places  ◇─────────────────│
-│    Username              │ N  │    MedicineID(FK)│ N  │    MedicineName              │
-│    Email                 │    │    Quantity      │    │    Quantity                  │
-│    Phone                 │    └─────────────────┘    │    TotalPrice                │
-│    Password              │                            │    OrderDate                 │
-│    Role                  │                            │    Status                    │
-└────────────┬─────────────┘                            └──────────────────────────────┘
-             │ 1
-        ◇ Uploads ◇
-             │ N
-┌────────────┴─────────────┐
-│       PRESCRIPTIONS      │
-│──────────────────────────│
-│ 🔑 PrescriptionID (PK)   │
-│    UserID (FK)           │
-│    FileName              │
-│    FilePath              │
-│    UploadDate            │
-│    Status                │
-└──────────────────────────┘
-```
-
-> 💡 **Relationships at a glance:**
-> - A **User** can add **N** medicines to their **Cart** (`Adds to` — 1:N)
-> - A **Medicine** can appear in **N** Cart entries (`In cart` — 1:N)
-> - A **User** can place **N** **Orders** (`Places` — 1:N)
-> - A **User** can upload **N** **Prescriptions** (`Uploads` — 1:N)
-
----
-
 ## 📁 Project Structure
 
 ```
