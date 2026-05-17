@@ -246,7 +246,7 @@ namespace PharmacyUser
                 string.IsNullOrWhiteSpace(txtPhone.Text) ||
                 string.IsNullOrWhiteSpace(txtPassword.Text) ||
                 string.IsNullOrWhiteSpace(txtConfirmPassword.Text) ||
-                cboRole.SelectedIndex == 0)
+                cboRole.SelectedIndex < 0)
             {
                 MessageBox.Show("Please fill in all fields and select a role.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
